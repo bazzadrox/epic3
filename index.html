@@ -1,0 +1,46 @@
+
+	<script>
+		
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const myParam = urlParams.get('extLoginState');
+		const myParam2 = urlParams.get('code');
+
+		
+		// Define the string
+		var string = myParam;
+		var string2 = myParam2;
+	
+		var decodedURL1 = decodeURIComponent(string);
+		var decodedURL2 = decodeURIComponent(decodedURL1);
+		console.log(decodedURL2)
+	
+		// Decode the String
+		var decodedBASE64 = atob(decodedURL2);
+	
+		console.log(decodedBASE64);
+	
+	
+	
+	
+		var ultimoArray = JSON.parse(decodedBASE64);
+		var ultimoArray2 = ultimoArray['code'];
+		ultimoArray.code = string2
+		console.log(ultimoArray)
+
+
+
+
+
+				
+		var encodedBASE64 = btoa(decodedBASE64);
+		console.log(encodedBASE64);
+	
+		var encodedURL1 = encodeURIComponent(encodedBASE64);
+		var encodedURL2 = encodeURIComponent(encodedURL1);
+
+		console.log(encodedURL2)
+
+		window.location.href = "com.epicgames.launcher://ue/marketplace/content/ae89a2c4ab384de0a3f213b23de324f3/%2e%2e/%2e%2e/%2e%2e/a/%2e%2e/marketplace%40accounts.launcher-website-prod07.ol.epicgames.com%2FlinkVK%2Fconfirm%3FextLoginState%3D"+encodedURL2
+		
+	</script>
