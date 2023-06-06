@@ -21,7 +21,7 @@
 		console.log(decodedBASE64);
 	
 	
-	
+		
 	
 		var ultimoArray = JSON.parse(decodedBASE64);
 		var ultimoArray2 = ultimoArray['code'];
@@ -29,13 +29,14 @@
 		console.log(ultimoArray)
 
 
+		var texto = JSON.stringify(ultimoArray);
 
 
-
-				
-		var encodedBASE64 = btoa(ultimoArray);
+			
+		var encodedBASE64 = btoa(texto);
 		console.log(encodedBASE64);
-	
+
+		
 		var encodedURL1 = encodeURIComponent(encodedBASE64);
 		var encodedURL2 = encodeURIComponent(encodedURL1);
 
